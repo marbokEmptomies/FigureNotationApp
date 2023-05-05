@@ -39,9 +39,9 @@ export default function Navbar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Työkalut
+            Tools
           </Typography>
-        <Button color="inherit" href="/">Etusivu</Button>
+        <Button color="inherit" href="/">Home</Button>
         </Toolbar>
       </AppBar>
       <Sidebar state={state} setState={setState} toggleDrawer={toggleDrawer}/>

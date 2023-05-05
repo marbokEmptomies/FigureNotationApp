@@ -5,10 +5,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
 
 const Sidebar = ({state, setState, toggleDrawer}) => {
 
@@ -19,13 +16,11 @@ const Sidebar = ({state, setState, toggleDrawer}) => {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <h3 className="sidebar-header">Actions</h3>
       <List>
         {['New Sheet', 'Save Sheet', 'Load Sheet', 'Print Sheet'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton href={`/${text.toLowerCase().replaceAll(' ', '')}`}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
@@ -33,12 +28,10 @@ const Sidebar = ({state, setState, toggleDrawer}) => {
       </List>
       <Divider />
       <List>
+        <h3 className="sidebar-header">Tools</h3>
         {['Chords', 'Melody', 'Bassline'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton href={`/${text.toLowerCase()}`}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
